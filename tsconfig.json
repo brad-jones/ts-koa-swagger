@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "target": "es2017",
+        "declaration": true,
+        "module": "commonjs",
+        "importHelpers": true,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.d.ts"
+    ],
+    "tsos": {
+        "visitors": [
+            "./visitors/**/*.js"
+        ]
+    }
+}
