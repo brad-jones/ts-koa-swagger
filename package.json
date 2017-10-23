@@ -5,12 +5,11 @@
         "clean": "shx rm -rf ./dist;",
         "build": "tsos build ./tsconfig.json",
         "rebuild": "yarn run clean; yarn run build;",
-        "watch": "nodemon -e js,ts,env,json --ignore dist/ --ignore visitors/ --exec 'bash -c' 'yarn run rebuild; yarn run start'",
-        "postinstall": "tsc -p ./visitors/tsconfig.json"
+        "watch": "nodemon -e js,ts,env,json --ignore dist/ --exec 'bash -c' 'yarn run rebuild; yarn run start'"
     },
     "dependencies": {
         "@brad-jones/openapi-spec-builder": "^3.1.0",
-        "@brad-jones/tsos-cli": "^2.0.0-rc.3",
+        "@brad-jones/tsos-cli": "^2.1.0",
         "@koa/cors": "^2.2.1",
         "change-case": "^3.0.1",
         "dotenv": "^4.0.0",
