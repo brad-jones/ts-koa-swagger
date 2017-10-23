@@ -1,16 +1,12 @@
 import { trim } from 'lodash';
+import { IVisitorContext } from './IVisitorContext';
 import { IAstVisitor } from '@brad-jones/tsos-compiler';
 
-let TranspileEndpointInputParameters: IAstVisitor = (ast) =>
+let TranspileEndpointInputParameters: IAstVisitor = (ast, ctx: IVisitorContext) =>
 {
     console.log('Transpiling Endpoint Input Parameters');
 
-    let endpointClasses = ast.getSourceFiles()
-        .map(_ => _.getClasses())
-        .reduce((a, b) => a.concat(b))
-        .filter(c => c.getImplements().some(i => i.getText() === 'IEndpoint'));
-
-    endpointClasses.forEach(endpoint =>
+    ctx.endpointClasses.forEach(endpoint =>
     {
         let inputCode = '';
 

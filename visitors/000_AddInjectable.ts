@@ -1,6 +1,7 @@
+import { IVisitorContext } from './IVisitorContext';
 import { IAstVisitor } from '@brad-jones/tsos-compiler';
 
-let AddInjectable: IAstVisitor = (ast) =>
+let AddInjectable: IAstVisitor = (ast, ctx: IVisitorContext) =>
 {
     let srcFiles = ast.getSourceFiles();
 
@@ -11,13 +12,13 @@ let AddInjectable: IAstVisitor = (ast) =>
     ]));
 
     console.log('Finding injectable classes');
-    let allInjectableClasses = srcFiles.map(_ => _.getClasses()).reduce((a, b) => a.concat(b));
+    ctx.injectAbleClasses = srcFiles.map(_ => _.getClasses()).reduce((a, b) => a.concat(b));
 
     console.log('Adding inversify "injectable" decorator to all injectable classes.');
-    allInjectableClasses.forEach(c => c.addDecorator({ name: 'injectable', arguments: [] }));
+    ctx.injectAbleClasses.forEach(c => c.addDecorator({ name: 'injectable', arguments: [] }));
 
     console.log('Adding "inject" decorators for named interfaces.');
-    allInjectableClasses.forEach(c =>
+    ctx.injectAbleClasses.forEach(c =>
         c.getConstructors().forEach(ctor =>
             ctor.getParameters().filter(p =>
                 !p.getDecorators().some(d =>

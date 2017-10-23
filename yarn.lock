@@ -16,10 +16,10 @@
     typescript "^2.2.1"
 
 "@brad-jones/tsos-cli@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-cli/-/tsos-cli-2.1.0.tgz#882590e581f3b565475a2898cb1923fb26f2cfb3"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-cli/-/tsos-cli-2.1.1.tgz#24bb8eb18615f86bee165cfe48636ad764ee0d19"
   dependencies:
-    "@brad-jones/tsos-compiler" "2.0.1"
+    "@brad-jones/tsos-compiler" "2.1.0"
     caporal "^0.8.0"
     change-case "^3.0.1"
     inversify "^4.3.0"
@@ -32,9 +32,9 @@
     tslib "^1.7.1"
     xxhashjs "^0.2.1"
 
-"@brad-jones/tsos-compiler@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-compiler/-/tsos-compiler-2.0.1.tgz#881fb17c506fc7a7807532c5dcf23f6233ee0ca2"
+"@brad-jones/tsos-compiler@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-compiler/-/tsos-compiler-2.1.0.tgz#1536de6c45727cfaf3a084c31039ebb0cc10e14e"
   dependencies:
     deasync-promise "^1.0.1"
     inversify "^4.3.0"

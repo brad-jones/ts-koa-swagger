@@ -18,7 +18,7 @@
     ],
     "tsos": {
         "visitors": [
-            "./visitors/**/*.ts"
+            "./visitors/**/*_*.ts"
         ]
     }
 }

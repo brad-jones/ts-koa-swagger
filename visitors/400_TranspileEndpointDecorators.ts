@@ -1,16 +1,12 @@
-import { Scope  } from "ts-simple-ast";
+import { Scope } from "ts-simple-ast";
+import { IVisitorContext } from './IVisitorContext';
 import { IAstVisitor } from '@brad-jones/tsos-compiler';
 
-let TranspileEndpointDecorators: IAstVisitor = (ast) =>
+let TranspileEndpointDecorators: IAstVisitor = (ast, ctx: IVisitorContext) =>
 {
     console.log('Transpiling Endpoint Decorators');
 
-    let endpointClasses = ast.getSourceFiles()
-        .map(_ => _.getClasses())
-        .reduce((a, b) => a.concat(b))
-        .filter(c => c.getImplements().some(i => i.getText() === 'IEndpoint'));
-
-    endpointClasses.forEach(endpointClass =>
+    ctx.endpointClasses.forEach(endpointClass =>
     {
         let executeMethod = endpointClass.getInstanceMethodOrThrow('Execute');
 

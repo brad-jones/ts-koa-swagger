@@ -5,6 +5,7 @@ import * as ts from 'typescript';
 import * as shell from 'shelljs';
 import jsonic = require('jsonic');
 import * as changeCase from 'change-case';
+import { IVisitorContext } from './IVisitorContext';
 import { IAstVisitor } from '@brad-jones/tsos-compiler';
 import OpenApiSpecBuilder from '@brad-jones/openapi-spec-builder';
 import ISchema from '@brad-jones/openapi-spec-builder/lib/v2/Modified/ISchema';
@@ -13,16 +14,9 @@ import IResponse from '@brad-jones/openapi-spec-builder/lib/v2/Modified/IRespons
 import IParameter from '@brad-jones/openapi-spec-builder/lib/v2/Modified/IParameter';
 import { Type, InterfaceDeclaration, TypeGuards, PropertyDeclaration, Symbol } from "ts-simple-ast";
 
-let GenerateSwaggerDoc: IAstVisitor = async (ast) =>
+let GenerateSwaggerDoc: IAstVisitor = async (ast, ctx: IVisitorContext) =>
 {
     console.log('Generating Swagger Document');
-
-    let srcDir = await fs.realpath(__dirname + '/../src');
-
-    let endpointClasses = ast.getSourceFiles()
-        .map(_ => _.getClasses())
-        .reduce((a, b) => a.concat(b))
-        .filter(c => c.getImplements().some(i => i.getText() === 'IEndpoint'));
 
     let spec = new OpenApiSpecBuilder
     ({
@@ -33,7 +27,7 @@ let GenerateSwaggerDoc: IAstVisitor = async (ast) =>
             license: { name: 'MIT' }
         },
         schemes: ['http'],
-        endpoints: endpointClasses.map(endpointClass =>
+        endpoints: ctx.endpointClasses.map(endpointClass =>
         {
             let executeMethod = endpointClass.getInstanceMethodOrThrow('Execute');
             let executeMethodDecorators = executeMethod.getDecorators();
@@ -41,7 +35,7 @@ let GenerateSwaggerDoc: IAstVisitor = async (ast) =>
             let endpointPath = '/' + changeCase.pathCase
             (
                 endpointClass.getSourceFile().getFilePath()
-                .replace(srcDir + '/app/Endpoints', '')
+                .replace(ctx.srcDir + '/app/Endpoints', '')
                 .replace('.ts', '')
             );
 
