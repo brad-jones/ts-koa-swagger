@@ -1,15 +1,16 @@
-import { IEndpoint } from 'app/Types';
-import { interfaces } from 'inversify';
-import { Get, FromRoute, Response } from 'app/Decorators';
+import { Get, Response } from 'app/Decorators';
 import { BaseEndpoint } from 'app/Endpoints/BaseEndpoint';
+import { IEndpoint, I400InvalidResponse } from 'app/Types';
 
 export default class Foo extends BaseEndpoint implements IEndpoint
 {
-    @Get('{bar}')
+    @Get()
     @Response<IFooResponse>(200)
-    public async Execute(@FromRoute() bar: string)
+    @Response(500, 'Internal Server Error')
+    @Response<I400InvalidResponse>(400, 'Invalid Request')
+    public async Execute()
     {
-        return { foo: bar };
+        return { foo: 'bar' };
     }
 }
 

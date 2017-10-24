@@ -44,3 +44,15 @@ export interface IFileDownload
     type: string;
     mtime: Date;
 }
+
+export interface I400InvalidResponse
+{
+    code: string;
+    errors:
+    {
+        actual: object,
+        expected: object,
+        error: string,
+        where: string
+    }[];
+}
