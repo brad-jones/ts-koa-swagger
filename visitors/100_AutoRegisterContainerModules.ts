@@ -17,7 +17,7 @@ let AutoRegisterContainerModules: IAstVisitor = async (ast, ctx: IVisitorContext
     {
         return {
             defaultImport: 'Cm_' + index,
-            moduleSpecifier: cm.getFilePath().replace(ctx.containerSrcFile + '/', '').replace('.ts', '')
+            moduleSpecifier: cm.getFilePath().replace(ctx.srcDir + '/', '').replace('.ts', '')
         };
     }));
 
