@@ -16,7 +16,6 @@
         "watch": "nodemon -e js,ts,env,json --ignore dist/ --exec 'bash -c' 'yarn run rebuild; yarn run start'"
     },
     "dependencies": {
-        "@koa/cors": "^2.2.1",
         "change-case": "^3.0.1",
         "dotenv": "^4.0.0",
         "escape-string-regexp": "^1.0.5",
@@ -41,6 +40,7 @@
         "tslib": "^1.7.1"
     },
     "devDependencies": {
+        "@koa/cors": "^2.2.1",
         "@brad-jones/openapi-spec-builder": "^3.1.0",
         "@brad-jones/tsos-cli": "^2.1.0",
         "@types/circular-json": "^0.1.31",
