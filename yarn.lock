@@ -16,10 +16,10 @@
     typescript "^2.2.1"
 
 "@brad-jones/tsos-cli@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-cli/-/tsos-cli-2.1.1.tgz#24bb8eb18615f86bee165cfe48636ad764ee0d19"
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-cli/-/tsos-cli-2.1.2.tgz#34aeb024ff1d46a06a66f09568fbab4f7e438c64"
   dependencies:
-    "@brad-jones/tsos-compiler" "2.1.0"
+    "@brad-jones/tsos-compiler" "2.1.1"
     caporal "^0.8.0"
     change-case "^3.0.1"
     inversify "^4.3.0"
@@ -32,16 +32,16 @@
     tslib "^1.7.1"
     xxhashjs "^0.2.1"
 
-"@brad-jones/tsos-compiler@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-compiler/-/tsos-compiler-2.1.0.tgz#1536de6c45727cfaf3a084c31039ebb0cc10e14e"
+"@brad-jones/tsos-compiler@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@brad-jones/tsos-compiler/-/tsos-compiler-2.1.1.tgz#b137a5013557cf88147eb7a1582806e8c9ce436a"
   dependencies:
     deasync-promise "^1.0.1"
     inversify "^4.3.0"
     lodash "^4.17.4"
     mz "^2.7.0"
     require-glob "^3.2.0"
-    ts-simple-ast "^0.77.0"
+    ts-simple-ast "^0.89.0"
     tslib "^1.7.1"
 
 "@koa/cors@^2.2.1":
@@ -603,9 +603,9 @@ co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
 
-code-block-writer@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/code-block-writer/-/code-block-writer-4.2.1.tgz#c93075dc05c58520714fd909497189a60ff15e9f"
+code-block-writer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/code-block-writer/-/code-block-writer-5.0.0.tgz#51c95723208c1af3003767b82170572dd2aff6e6"
 
 code-point-at@^1.0.0:
   version "1.1.0"
@@ -2386,7 +2386,7 @@ object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
-object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -3276,13 +3276,15 @@ ts-node@^3.0.2:
     v8flags "^3.0.0"
     yn "^2.0.0"
 
-ts-simple-ast@^0.77.0:
-  version "0.77.0"
-  resolved "https://registry.yarnpkg.com/ts-simple-ast/-/ts-simple-ast-0.77.0.tgz#2733fa5a305f1a1555231c6736b7e566e89d80ce"
+ts-simple-ast@^0.89.0:
+  version "0.89.0"
+  resolved "https://registry.yarnpkg.com/ts-simple-ast/-/ts-simple-ast-0.89.0.tgz#82b80ef991b1a754c1348458d0c21d875c364235"
   dependencies:
-    code-block-writer "^4.2.1"
+    code-block-writer "^5.0.0"
     globby "^6.1.0"
-    typescript "2.5.3"
+    minimatch "^3.0.4"
+    object-assign "^4.1.1"
+    typescript "2.6.1"
 
 tsconfig@^6.0.0:
   version "6.0.0"
@@ -3316,11 +3318,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
-
-typescript@^2.2.1, typescript@^2.5.3:
+typescript@2.6.1, typescript@^2.2.1, typescript@^2.5.3:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.1.tgz#ef39cdea27abac0b500242d6726ab90e0c846631"
 

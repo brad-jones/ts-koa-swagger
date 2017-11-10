@@ -40,9 +40,9 @@
         "tslib": "^1.7.1"
     },
     "devDependencies": {
-        "@koa/cors": "^2.2.1",
         "@brad-jones/openapi-spec-builder": "^3.1.0",
         "@brad-jones/tsos-cli": "^2.1.0",
+        "@koa/cors": "^2.2.1",
         "@types/circular-json": "^0.1.31",
         "@types/dotenv": "^4.0.1",
         "@types/escape-string-regexp": "^0.0.31",
@@ -62,7 +62,6 @@
         "nodemon": "^1.12.1",
         "recast": "^0.12.6",
         "shx": "^0.2.2",
-        "ts-simple-ast": "^0.77.0",
         "typescript": "^2.5.3"
     }
 }
